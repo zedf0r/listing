@@ -15,9 +15,7 @@ export const ItemDetails = ({
   return (
     <div className="item-details">
       <p className="item-title">{getTitleLength(title)}</p>
-      <p className="item-price">
-        {`${getCurrencyCode(currency_code)} ${price ? price : ""}`}
-      </p>
+      <p className="item-price">{getCurrencyCode(currency_code, price)}</p>
       <p className={`item-quantity level-${getQuantityLevel(quantity)}`}>
         {quantity}
       </p>
@@ -38,16 +36,19 @@ const getQuantityLevel = (quantity: number | undefined) => {
   }
 };
 
-const getCurrencyCode = (currency_code: string | undefined) => {
-  if (currency_code === undefined) {
+const getCurrencyCode = (
+  currency_code: string | undefined,
+  price: string | undefined
+) => {
+  if (currency_code === undefined || price === undefined) {
     return "";
   }
   if (currency_code === "EUR") {
-    return "€";
+    return `€${price}`;
   } else if (currency_code === "USD") {
-    return "$";
+    return `$${price}`;
   } else {
-    return currency_code;
+    return `${price} ${currency_code}`;
   }
 };
 
