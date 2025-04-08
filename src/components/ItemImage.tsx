@@ -1,6 +1,4 @@
-import { TypeItem } from "./type";
-
-type TypeImage = Pick<TypeItem, "url" | "image">;
+import { TypeImage } from "./type";
 
 export const ItemImage = ({ url, image }: TypeImage) => {
   return (

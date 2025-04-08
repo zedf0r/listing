@@ -1,13 +1,17 @@
 export type TypeItem = {
   listing_id: number;
   state: string;
-} & TypeItemDescription;
+} & TypeItemDetail &
+  TypeImage;
 
-export type TypeItemDescription = {
+export type TypeImage = {
   url?: string;
   image?: string;
+};
+
+export type TypeItemDetail = {
   title?: string;
-  currency_code?: string;
   price?: string;
   quantity?: number;
+  currency_code?: string;
 };

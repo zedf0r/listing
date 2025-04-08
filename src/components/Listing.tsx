@@ -6,14 +6,10 @@ export const Listing = () => {
     <div className="item-list">
       {data.map((item) => (
         <Item
+          {...item}
+          key={item.listing_id}
           listing_id={item.listing_id}
-          state={item.state}
-          url={item.url}
           image={item.MainImage?.url_570xN}
-          title={item.title}
-          currency_code={item.currency_code}
-          price={item.price}
-          quantity={item.quantity}
         />
       ))}
     </div>

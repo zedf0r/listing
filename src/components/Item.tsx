@@ -2,28 +2,19 @@ import { ItemDetails } from "./ItemDetails";
 import { ItemImage } from "./ItemImage";
 import type { TypeItem } from "./type";
 
-export const Item = ({
-  listing_id,
-  state,
-  url,
-  image,
-  title,
-  currency_code,
-  price,
-  quantity,
-}: TypeItem) => {
-  if (state === "removed") {
+export const Item = (props: TypeItem) => {
+  if (props.state === "removed") {
     return;
   } else
     return (
       <div className="item">
-        <ItemImage key={listing_id} url={url} image={image} />
+        <ItemImage key={props.listing_id} url={props.url} image={props.image} />
         <ItemDetails
-          key={listing_id + 1}
-          title={title}
-          price={price}
-          quantity={quantity}
-          currency_code={currency_code}
+          key={props.listing_id + 1}
+          title={props.title}
+          price={props.price}
+          quantity={props.quantity}
+          currency_code={props.currency_code}
         />
       </div>
     );

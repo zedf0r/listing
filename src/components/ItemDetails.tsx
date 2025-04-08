@@ -1,9 +1,4 @@
-import { TypeItem } from "./type";
-
-type TypeItemDetail = Pick<
-  TypeItem,
-  "title" | "price" | "quantity" | "currency_code"
->;
+import { TypeItemDetail } from "./type";
 
 export const ItemDetails = ({
   title,
@@ -22,7 +17,7 @@ export const ItemDetails = ({
   );
 };
 
-const getQuantityLevel = (quantity: number | undefined) => {
+const getQuantityLevel = (quantity?: number) => {
   if (quantity === undefined) {
     return "";
   }
@@ -36,9 +31,6 @@ const getQuantityLevel = (quantity: number | undefined) => {
 };
 
 const getCurrencyCode = (currency_code?: string, price?: string) => {
-  if (currency_code === undefined || price === undefined) {
-    return "";
-  }
   if (currency_code === "EUR") {
     return `€${price}`;
   } else if (currency_code === "USD") {
