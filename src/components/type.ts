@@ -4,7 +4,6 @@ export type TypeItem = {
 } & TypeItemDescription;
 
 export type TypeItemDescription = {
-  listing_id: number;
   url?: string;
   image?: string;
   title?: string;
