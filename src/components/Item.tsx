@@ -4,6 +4,7 @@ import type { TypeItem } from "./type";
 
 export const Item = ({
   listing_id,
+  state,
   url,
   image,
   title,
@@ -11,16 +12,19 @@ export const Item = ({
   price,
   quantity,
 }: TypeItem) => {
-  return (
-    <div className="item">
-      <ItemImage key={listing_id} url={url} image={image} />
-      <ItemDetails
-        key={listing_id + 1}
-        title={title}
-        price={price}
-        quantity={quantity}
-        currency_code={currency_code}
-      />
-    </div>
-  );
+  if (state === "removed") {
+    return;
+  } else
+    return (
+      <div className="item">
+        <ItemImage key={listing_id} url={url} image={image} />
+        <ItemDetails
+          key={listing_id + 1}
+          title={title}
+          price={price}
+          quantity={quantity}
+          currency_code={currency_code}
+        />
+      </div>
+    );
 };

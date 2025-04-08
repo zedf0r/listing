@@ -7,6 +7,7 @@ export const Listing = () => {
       {data.map((item) => (
         <Item
           listing_id={item.listing_id}
+          state={item.state}
           url={item.url}
           image={item.MainImage?.url_570xN}
           title={item.title}

@@ -1,5 +1,10 @@
 export type TypeItem = {
   listing_id: number;
+  state: string;
+} & TypeItemDescription;
+
+export type TypeItemDescription = {
+  listing_id: number;
   url?: string;
   image?: string;
   title?: string;
