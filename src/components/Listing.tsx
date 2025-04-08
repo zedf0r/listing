@@ -8,7 +8,7 @@ export const Listing = () => {
         <Item
           listing_id={item.listing_id}
           url={item.url}
-          MainImage={item.MainImage?.url_570xN}
+          image={item.MainImage?.url_570xN}
           title={item.title}
           currency_code={item.currency_code}
           price={item.price}

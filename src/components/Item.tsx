@@ -5,7 +5,7 @@ import type { TypeItem } from "./type";
 export const Item = ({
   listing_id,
   url,
-  MainImage,
+  image,
   title,
   currency_code,
   price,
@@ -13,7 +13,7 @@ export const Item = ({
 }: TypeItem) => {
   return (
     <div className="item">
-      <ItemImage key={listing_id} url={url} MainImage={MainImage} />
+      <ItemImage key={listing_id} url={url} image={image} />
       <ItemDetails
         key={listing_id + 1}
         title={title}

@@ -1,12 +1,12 @@
 import { TypeItem } from "./type";
 
-type TypeImage = Pick<TypeItem, "url" | "MainImage">;
+type TypeImage = Pick<TypeItem, "url" | "image">;
 
-export const ItemImage = ({ url, MainImage }: TypeImage) => {
+export const ItemImage = ({ url, image }: TypeImage) => {
   return (
     <div className="item-image">
       <a href={url}>
-        <img src={MainImage} alt="" />
+        <img src={image} alt="" />
       </a>
     </div>
   );

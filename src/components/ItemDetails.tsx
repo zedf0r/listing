@@ -11,7 +11,6 @@ export const ItemDetails = ({
   quantity,
   currency_code,
 }: TypeItemDetail) => {
-  console.log(title);
   return (
     <div className="item-details">
       <p className="item-title">{getTitleLength(title)}</p>
@@ -36,23 +35,20 @@ const getQuantityLevel = (quantity: number | undefined) => {
   }
 };
 
-const getCurrencyCode = (
-  currency_code: string | undefined,
-  price: string | undefined
-) => {
+const getCurrencyCode = (currency_code?: string, price?: string) => {
   if (currency_code === undefined || price === undefined) {
     return "";
   }
   if (currency_code === "EUR") {
     return `€${price}`;
   } else if (currency_code === "USD") {
-    return `$${price}`;
+    return "$" + price;
   } else {
     return `${price} ${currency_code}`;
   }
 };
 
-const getTitleLength = (title: string | undefined): string => {
+const getTitleLength = (title?: string): string => {
   if (title === undefined) {
     return "";
   }
